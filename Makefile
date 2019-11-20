@@ -4,14 +4,15 @@ SAC = SetAssociateCache
 FAC = FullAssociateCache
 PF = Prefetch
 SAN = SetAssociateNot
+HC = HotCold
 
-CFLAGS= -std=c++14  -O2 
+CFLAGS= -std=c++14  -O2 -WALL
 
 Main: $(M)
 
 
-$(M):$(M).o $(DC).o $(SAC).o $(FAC).o $(PF).o $(SAN).o
-	g++ $(M).o $(DC).o $(SAC).o $(FAC).o $(PF).o $(SAN).o -o $(M)
+$(M):$(M).o $(DC).o $(SAC).o $(FAC).o $(PF).o $(SAN).o $(HC).o
+	g++ $(M).o $(DC).o $(SAC).o $(FAC).o $(PF).o $(SAN).o $(HC).o -o $(M)
 
 
 
@@ -30,5 +31,8 @@ $(PF).o:$(PF).cpp
 
 $(SAN).o:$(SAN).cpp 
 	g++ $(CFLAGS) -c  $(SAN).cpp -o $(SAN).o
+
+$(HC).o:$(HC).cpp 
+	g++ $(CFLAGS) -c  $(HC).cpp -o $(HC).o
 clean:
 	rm -rf *.o  $(M)

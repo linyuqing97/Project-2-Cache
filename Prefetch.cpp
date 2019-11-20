@@ -9,6 +9,8 @@ using namespace std;
 
 Prefetch::Prefetch(int cacheSize){
     this->cacheSize = cacheSize;
+	this->totalHit = 0;
+	this->hit = 0;
     umap.clear();
 }
 
@@ -19,6 +21,7 @@ void Prefetch::MapAddr(int address,int set,int option = 0,bool loadFlag ){
 	int block = (address >> offsetSize);
 	int mask = ((0x1 << blockSize) - 1); 
 	block = block & mask;
+	bool missed = false;
 
 	int tag = address >> (offsetSize + blockSize); 
 	if (umap.find(block)!=umap.end()){
@@ -39,14 +42,16 @@ void Prefetch::MapAddr(int address,int set,int option = 0,bool loadFlag ){
 					umap[block].pop_front();
 					umap[block].push_back(tag);
 				}
+				missed = true;
 			}
 	
 	}
 	else{
 				umap[block].push_back(tag);
+				missed = true;
 	} 
 	
-	
+	if(option == 1 && !missed)return;
 	//prefetch
 	int tempAddress = address+32;
 	int tempBlockSize = log2 (this->cacheSize / (cacheLineSize*set)); 
