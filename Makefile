@@ -6,7 +6,7 @@ PF = Prefetch
 SAN = SetAssociateNot
 HC = HotCold
 
-CFLAGS= -std=c++14  -O2 -WALL
+CFLAGS= -std=c++14  -O2 
 
 Main: $(M)
 
