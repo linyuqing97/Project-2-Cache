@@ -145,7 +145,6 @@ int main(int argc, char*argv[]){
     outfile<<pfn4.hit<<","<<pfn4.totalHit<<";";
     outfile<<endl;
 
-    cout<<hc.hit<<" "<<hc.totalHit<<endl;
-    return 0;
 
+    return 0;
 }

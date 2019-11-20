@@ -1,4 +1,5 @@
 M = Main
+C = cache-sim
 DC = DirectCache
 SAC = SetAssociateCache
 FAC = FullAssociateCache
@@ -12,7 +13,7 @@ Main: $(M)
 
 
 $(M):$(M).o $(DC).o $(SAC).o $(FAC).o $(PF).o $(SAN).o $(HC).o
-	g++ $(M).o $(DC).o $(SAC).o $(FAC).o $(PF).o $(SAN).o $(HC).o -o $(M)
+	g++ $(M).o $(DC).o $(SAC).o $(FAC).o $(PF).o $(SAN).o $(HC).o -o $(C)
 
 
 
@@ -35,4 +36,4 @@ $(SAN).o:$(SAN).cpp
 $(HC).o:$(HC).cpp 
 	g++ $(CFLAGS) -c  $(HC).cpp -o $(HC).o
 clean:
-	rm -rf *.o  $(M)
+	rm -rf *.o  $(C)
