@@ -7,6 +7,8 @@ using namespace std;
 
 DirectCache::DirectCache(int cacheSize){
     this->cacheSize = cacheSize;
+	this->hit = 0;
+	this->totalHit = 0;
     umap.clear();
 }
 

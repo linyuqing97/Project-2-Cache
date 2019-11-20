@@ -7,7 +7,8 @@ using namespace std;
 
 FullAssociateCache::FullAssociateCache(int cacheSize){
     this->cacheSize = cacheSize;
-    
+    this->hit = 0;
+	this->totalHit = 0;
 }
 void FullAssociateCache::MapAddr(int address){
     this->totalHit++;
