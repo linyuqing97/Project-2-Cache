@@ -105,44 +105,50 @@ int main(int argc, char*argv[]){
     
     }
     //direct map cache output
-    outfile<<d1.hit<<","<<d1.totalHit<<";";
-    outfile<<d2.hit<<","<<d2.totalHit<<";";
-    outfile<<d3.hit<<","<<d3.totalHit<<";";
-    outfile<<d4.hit<<","<<d4.totalHit<<";";
+    outfile<<d1.hit<<","<<d1.totalHit<<"; ";
+    outfile<<d2.hit<<","<<d2.totalHit<<"; ";
+    outfile<<d3.hit<<","<<d3.totalHit<<"; ";
+    outfile<<d4.hit<<","<<d4.totalHit<<"; ";
+    //outfile<<" ";
     outfile<<endl;
 
     //set associate cache output
-    outfile<<sac1.hit<<","<<sac1.totalHit<<";";
-    outfile<<sac2.hit<<","<<sac2.totalHit<<";";
-    outfile<<sac3.hit<<","<<sac3.totalHit<<";";
-    outfile<<sac4.hit<<","<<sac4.totalHit<<";";
+    outfile<<sac1.hit<<","<<sac1.totalHit<<"; ";
+    outfile<<sac2.hit<<","<<sac2.totalHit<<"; ";
+    outfile<<sac3.hit<<","<<sac3.totalHit<<"; ";
+    outfile<<sac4.hit<<","<<sac4.totalHit<<"; ";
+    //outfile<<" ";
     outfile<<endl;
     
     // Full Associate LRU output
-    outfile<<fac.hit<<","<<fac.totalHit<<";";
+    outfile<<fac.hit<<","<<fac.totalHit<<"; ";
+    //outfile<<" ";
     outfile<<endl;
 
     //Full Assocaite HC output
-    outfile<<hc.hit<<","<<hc.totalHit<<";";
+    outfile<<hc.hit<<","<<hc.totalHit<<"; ";
+    //outfile<<" ";
     outfile<<endl;
 
     //Set associate with not allocation on write miss
-    outfile<<san1.hit<<","<<san1.totalHit<<";";
-    outfile<<san2.hit<<","<<san2.totalHit<<";";
-    outfile<<san3.hit<<","<<san3.totalHit<<";";
-    outfile<<san4.hit<<","<<san4.totalHit<<";";
+    outfile<<san1.hit<<","<<san1.totalHit<<"; ";
+    outfile<<san2.hit<<","<<san2.totalHit<<"; ";
+    outfile<<san3.hit<<","<<san3.totalHit<<"; ";
+    outfile<<san4.hit<<","<<san4.totalHit<<"; ";
     outfile<<endl;
 
-    outfile<<pf1.hit<<","<<pf1.totalHit<<";";
-    outfile<<pf2.hit<<","<<pf2.totalHit<<";";
-    outfile<<pf3.hit<<","<<pf3.totalHit<<";";
-    outfile<<pf4.hit<<","<<pf4.totalHit<<";";
+    outfile<<pf1.hit<<","<<pf1.totalHit<<"; ";
+    outfile<<pf2.hit<<","<<pf2.totalHit<<"; ";
+    outfile<<pf3.hit<<","<<pf3.totalHit<<"; ";
+    outfile<<pf4.hit<<","<<pf4.totalHit<<"; ";
+  //  outfile<<" ";
     outfile<<endl;
 
-    outfile<<pfn1.hit<<","<<pfn1.totalHit<<";";
-    outfile<<pfn2.hit<<","<<pfn2.totalHit<<";";
-    outfile<<pfn3.hit<<","<<pfn3.totalHit<<";";
-    outfile<<pfn4.hit<<","<<pfn4.totalHit<<";";
+    outfile<<pfn1.hit<<","<<pfn1.totalHit<<"; ";
+    outfile<<pfn2.hit<<","<<pfn2.totalHit<<"; ";
+    outfile<<pfn3.hit<<","<<pfn3.totalHit<<"; ";
+    outfile<<pfn4.hit<<","<<pfn4.totalHit<<"; ";
+//    outfile<<" ";
     outfile<<endl;
 
 
